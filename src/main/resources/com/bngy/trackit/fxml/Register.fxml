@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="login-container" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bngy.trackit.controllers.RegisterController">
+    <StackPane fx:id="windowCtrl_pane" layoutX="-42.0" layoutY="10.0" prefHeight="45.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="TOP_RIGHT" StackPane.alignment="CENTER_RIGHT">
+            <FontAwesomeIconView fx:id="mnmz_btn" glyphName="MINUS" size="15">
+                <HBox.margin>
+                    <Insets right="6.0" top="8.0" />
+                </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="exit_btn" glyphName="CLOSE" size="15">
+                <HBox.margin>
+                    <Insets right="10.0" top="5.0" />
+                </HBox.margin>
+            </FontAwesomeIconView>
+        </HBox>
+    </StackPane>
+    <VBox layoutX="390.0" layoutY="172.0" prefHeight="376.0" prefWidth="500.0" styleClass="login-form" stylesheets="@../css/login.css">
+        <HBox prefHeight="100.0" prefWidth="350.0" styleClass="logo-container" stylesheets="@../css/login.css">
+            <FontAwesomeIconView glyphName="SEARCH" size="30" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TrackIt!" />
+        </HBox>
+        <TextField fx:id="email_fld" prefHeight="35.0" prefWidth="500.0" promptText="Email@mail.com" />
+        <TextField fx:id="username_fld" prefHeight="35.0" prefWidth="500.0" promptText="Username" />
+        <PasswordField fx:id="psw_fld" prefHeight="35.0" prefWidth="500.0" promptText="Password" />
+        <PasswordField fx:id="checkPsw_fld" prefHeight="35.0" prefWidth="500.0" promptText="Re-enter Password" />
+        <Button fx:id="register_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="500.0" text="Create an Account!" />
+      <Label fx:id="registerError_lbl" prefHeight="15.0" prefWidth="500.0" styleClass="error-label" />
+    </VBox>
+   <VBox layoutX="390.0" layoutY="548.0" prefHeight="74.0" prefWidth="500.0" styleClass="login-form-bottom" stylesheets="@../css/login.css">
+      <children>
+         <Button fx:id="back2log_btn" mnemonicParsing="false" prefHeight="23.0" prefWidth="120.0" text="Back to Login" />
+      </children>
+   </VBox>
+   <StackPane fx:id="errorMsg_pane" alignment="TOP_CENTER" layoutX="452.0" layoutY="20.0" prefHeight="250.0" prefWidth="414.0" styleClass="error-bg" visible="false" AnchorPane.bottomAnchor="234.0" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="235.0">
+      <children>
+         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="413.0" styleClass="error-title">
+            <children>
+               <FontAwesomeIconView fx:id="ErrorClose_btn" glyphName="CLOSE" size="15">
+                  <VBox.margin>
+                     <Insets left="395.0" top="5.0" />
+                  </VBox.margin>
+               </FontAwesomeIconView>
+               <Label fx:id="ErrorMsg_lbl" text="ERROR">
+                  <VBox.margin>
+                     <Insets left="15.0" top="15.0" />
+                  </VBox.margin>
+               </Label>
+               <Label fx:id="errorMsgBody_lbl" prefHeight="70.0" prefWidth="371.0" text="Error Message 7238: X operation failed, please retry">
+                  <VBox.margin>
+                     <Insets left="15.0" top="50.0" />
+                  </VBox.margin>
+               </Label>
+               <Button fx:id="ErrorReturn_btn" mnemonicParsing="false" prefHeight="23.0" prefWidth="67.0" styleClass="exit-btn" text="OK">
+                  <VBox.margin>
+                     <Insets left="320.0" top="25.0" />
+                  </VBox.margin>
+               </Button>
+            </children>
+         </VBox>
+      </children>
+   </StackPane>
+</AnchorPane>

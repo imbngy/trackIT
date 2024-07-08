@@ -1,0 +1,379 @@
+<!-- Dashboard CSS -->
+
+.main-background{
+    -fx-background-color: #313338;
+    -fx-background-radius: 0;
+}
+
+.main-background Label{
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-text-fill: #e1e1e1;
+}
+
+FontAwesomeIconView{
+    -fx-fill: #e1e1e1;
+}
+
+
+.min-btn{
+    -fx-fill: #e1e1e1;
+}
+
+.progexit-btn{
+    -fx-fill: #e1e1e1;
+}
+
+.sidebar{
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #e1e1e1;
+    -fx-alignment: center;
+}
+
+.sidebar-icons{
+    -fx-fill: #e1e1e1;
+    -fx-alignment: center;
+}
+
+.mid-panel{
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: #4a4a4a;
+    -fx-background-radius: 0px 0px 30px 30px;
+    -fx-border-radius: 0px 0px 30px 30px;
+}
+
+.mid-panel-title{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-family: "Lato Black";
+    -fx-font-size: 15px;
+}
+
+.mid-panel-greeting{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-size: 15px;
+    -fx-font-family: "Lato Light";
+}
+
+.mid-panel-time{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-size: 15px;
+    -fx-font-family: "Lato Light";
+}
+
+.mid-panel-add{
+    -fx-alignment: top-center;
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 14px;
+}
+
+.mid-panel-add-button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #4a4a4a;
+    -fx-border-style: dashed;
+    -fx-font-size: 14px;
+    -fx-text-fill: #e1e1e1;
+    -fx-fill: #e1e1e1;
+}
+
+.mid-panel-card{
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.mid-panel-summary-choice{
+    -fx-background-color: transparent;
+    -fx-border-color: #4a4a4a;
+    -fx-border-radius: 5px;
+}
+
+.mid-panel-summary{
+    -fx-font-family: "Lato Light";
+}
+
+.mid-panel-summary-expense{
+    -fx-font-size: 15px;
+}
+
+.mid-panel-summary-expense FontAwesomeIconView{
+    -fx-fill: #ed2939;
+}
+
+.mid-panel-summary-income{
+    -fx-font-size: 15px;
+}
+
+.mid-panel-summary-income FontAwesomeIconView{
+    -fx-fill: #50c878;
+}
+
+.bot-panel{
+    -fx-font-family: "Lato Light";
+}
+
+.bot-panel-title{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-size: 15px;
+    -fx-font-family: "Lato Black";
+}
+
+.transaction-pane{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 30px 30px 0px 0px;
+    -fx-background-radius: 30px 30px 0px 0px;
+    -fx-padding: 10px;
+}
+
+.list-cell{
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-selection-bar-non-focused: #3a3a3a;
+    -fx-selection-bar: #3a3a3a;
+    -fx-text-fill: #e1e1e1;
+}
+
+.list-cell:odd{
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-selection-bar-non-focused: #3a3a3a;
+    -fx-selection-bar: #3a3a3a;
+    -fx-text-fill: #e1e1e1;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2.0em;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #e1e1e1;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2.0em;
+}
+
+.scroll-bar:vertical .thumb:hover{
+    -fx-background-color: derive(#e1e1e1, 20%);
+}
+
+.card-stack{
+    -fx-font-family: "Lato Light";
+    -fx-text-fill: #ffffff;
+}
+
+.card-stack Label{
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-text-fill: #ffffff;
+}
+
+<!-- Item CSS -->
+.item   {
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #e1e1e1;
+}
+
+<!-- Settings CSS -->
+.setts-background{
+    -fx-background-color: #2e2e2e;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}
+
+.title{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-family: "Lato Black";
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+}
+
+.currency{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-alignment: center-left;
+}
+
+.currency ChoiceBox{
+    -fx-background-color: transparent;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.exit-btn{
+    -fx-background-color: #e1e1e1;
+    -fx-text-fill: #2e2e2e;
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+}
+
+.exit-btn:hover{
+    -fx-background-color: #4a4a4a;
+}
+
+.exit-btn FontAwesomeIconView{
+    -fx-fill: #2e2e2e;
+}
+
+<!-- Add CSS -->
+.add-parent{
+    -fx-background-color: #2e2e2e;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-font-family: "Lato Light";
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}
+
+.title{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-family: "Lato Black";
+    -fx-font-size: 17px;
+}
+
+.title-box{
+    -fx-background-color: transparent;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.form{
+    -fx-font-family: "Lato";
+    -fx-font-size: 15px;
+    -fx-text-fill: #e1e1e1;
+}
+
+.form TextField{
+    -fx-background-color: transparent;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #e1e1e1;
+}
+
+.form FontAwesomeIconView{
+    -fx-fill: #4a4a4a;
+}
+
+.form Button{
+    -fx-background-color: #e1e1e1;
+    -fx-text-fill: #2e2e2e;
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.check-box .box{
+    -fx-background-color: #e1e1e1;
+}
+
+.check-box .text{
+    -fx-text-fill: #e1e1e1;
+}
+
+.check-box:hover .box{
+    -fx-background-color: #4a4a4a;
+}
+
+.check-box:selected .box{
+    -fx-background-color: transparent;
+}
+
+.check-box:selected .mark{
+    -fx-background-color: #e1e1e1;
+}
+
+.form ChoiceBox{
+    -fx-background-color: transparent;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+<!-- ErrorPane CSS -->
+
+.error-bg{
+    -fx-background-color: #2e2e2e;
+    -fx-border-color: #4a4a4a;
+    -fx-border-width: 1px;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}
+
+.errorMsg-title{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-family: "Lato Black";
+    -fx-font-size: 17px;
+}
+
+.errorMsg-body{
+    -fx-text-fill: #e1e1e1;
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+}
+
+.errorExit-btn{
+    -fx-background-color: #e1e1e1;
+    -fx-text-fill: #2e2e2e;
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.errorExit-btn:hover{
+    -fx-background-color: #4a4a4a;
+}
+
+.errorExit-btn FontAwesomeIconView{
+    -fx-fill: #2e2e2e;
+}

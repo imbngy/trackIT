@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.login-container {
+    -fx-background-color: #fafafc;
+    -fx-font-family: "Lato";
+}
+
+/* logo */
+.logo-container {
+    -fx-background-color: #fafafc;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+}
+
+.logo-container FontAwesomeIconView {
+    -fx-fill: #1d1d1f;
+}
+
+.logo-container Text {
+    -fx-fill: #1d1d1f;
+    -fx-font-family: "Lato Black";
+    -fx-font-size: 2em;
+}
+
+/* login form */
+.login-form {
+    -fx-alignment: center;
+    -fx-spacing: 10;
+
+}
+
+.login-form Label {
+    -fx-text-fill: #1d1d1f;
+}
+
+.login-form TextField {
+    -fx-background-color: transparent;
+    -fx-border-color: #f0f0f0;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.login-form TextField:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: #1d1d1f;
+}
+
+.login-form Button {
+    -fx-background-color: #1d1d1f;
+    -fx-text-fill: #fafafc;
+}
+
+.login-form Button:hover {
+    -fx-background-color: #3f3f43;
+    -fx-text-fill: #fafafc;
+}
+
+.login-form Button:pressed {
+    -fx-background-color: #fafafc;
+    -fx-text-fill: #1d1d1f;
+}
+
+.login-form PasswordField {
+    -fx-background-color: transparent;
+    -fx-border-color: #f0f0f0;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.login-form PasswordField:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: #1d1d1f;
+}
+
+.login-form-btn {
+    -fx-alignment: top-center;
+    -fx-spacing: 10;
+}
+
+.login-form-bottom {
+    -fx-alignment: top-right;
+    -fx-spacing: 10;
+}
+
+.login-form-bottom Button {
+    -fx-background-color: #fafafc;
+    -fx-text-fill: #1d1d1f;
+    -fx-text-alignment: right;
+}
+
+.login-form-bottom Button:hover {
+    -fx-background-color: #d6d6d6;
+    -fx-text-fill: #3f3f43;
+}
+
+.error-label {
+    -fx-text-fill: #ff0000;
+}
+
+.error-bg{
+    -fx-background-color: #fafafc;
+    -fx-text-fill: #1d1d1f;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #ff0000;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.error-bg Button {
+    -fx-background-color: #1d1d1f;
+    -fx-text-fill: #fafafc;
+}
+
+.error-bg Button:hover {
+    -fx-background-color: #3f3f43;
+    -fx-text-fill: #fafafc;
+}

@@ -1,0 +1,6 @@
+.item   {
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}

@@ -1,0 +1,167 @@
+.parent{
+    -fx-background-color: #fafafc;
+    -fx-font-family: "Lato";
+}
+
+.sidebar{
+    -fx-background-color: #f5f5f7;
+    -fx-text-fill: #1d1d1f;
+    -fx-alignment: center;
+}
+
+.sidebar-icons{
+    -fx-fill: #1d1d1f;
+    -fx-alignment: center;
+}
+
+.mid-panel{
+    -fx-background-color: #f5f5f7;
+    -fx-border-color: #f0f0f0;
+    -fx-background-radius: 0px 0px 30px 30px;
+    -fx-border-radius: 0px 0px 30px 30px;
+}
+
+.mid-panel-title{
+    -fx-text-fill: #1d1d1f;
+    -fx-font-family: "Lato Black";
+    -fx-font-size: 15px;
+}
+
+.mid-panel-greeting{
+    -fx-text-fill: #1d1d1f;
+    -fx-font-size: 15px;
+    -fx-font-family: "Lato Light";
+}
+
+.mid-panel-time{
+    -fx-text-fill: #1d1d1f;
+    -fx-font-size: 15px;
+    -fx-font-family: "Lato Light";
+}
+
+.mid-panel-add{
+    -fx-alignment: top-center;
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 14px;
+}
+
+.mid-panel-add-button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #f0f0f0;
+    -fx-border-style: dashed;
+}
+
+.mid-panel-card{
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.mid-panel-summary-choice{
+    -fx-background-color: transparent;
+    -fx-border-color: #f0f0f0;
+    -fx-border-radius: 5px;
+}
+
+.mid-panel-summary{
+    -fx-font-family: "Lato Light";
+}
+
+.mid-panel-summary-expense{
+    -fx-font-size: 15px;
+}
+
+.bot-panel{
+    -fx-font-family: "Lato Light";
+}
+
+.bot-panel-title{
+    -fx-text-fill: #1d1d1f;
+    -fx-font-size: 15px;
+    -fx-font-family: "Lato Black";
+}
+
+.transaction-pane{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 30px 30px 0px 0px;
+    -fx-background-radius: 30px 30px 0px 0px;
+    -fx-padding: 10px;
+}
+
+.list-cell{
+    -fx-background-color: #f5f5f7;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-selection-bar-non-focused: #f5f5f7;
+    -fx-selection-bar: #f5f5f7;
+    -fx-text-fill: #1d1d1f;
+}
+
+.list-cell:odd{
+    -fx-background-color: #f5f5f7;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-selection-bar-non-focused: #f5f5f7;
+    -fx-selection-bar: #f5f5f7;
+    -fx-text-fill: #1d1d1f;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2.0em;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #1d1d1f;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2.0em;
+}
+
+.scroll-bar:vertical .thumb:hover{
+    -fx-background-color: derive(#1d1d1f, 20%);
+}
+
+
+
+.card-stack{
+    -fx-font-family: "Lato Light";
+    -fx-text-fill: #ffffff;
+}
+
+.card-stack Label{
+    -fx-font-family: "Lato Light";
+    -fx-font-size: 15px;
+    -fx-text-fill: #ffffff;
+}
+

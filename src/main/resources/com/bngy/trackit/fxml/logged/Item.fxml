@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="951.0" styleClass="item" stylesheets="@../../css/item.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="70.0">
+      <children>
+         <ImageView fx:id="trans_imgView" fitHeight="25.0" fitWidth="25.0" layoutX="44.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="19.0" />
+      </children>
+   </AnchorPane>
+   <Label fx:id="externalSource_lbl" text="Spotify">
+      <HBox.margin>
+         <Insets left="25.0" top="20.0" />
+      </HBox.margin>
+   </Label>
+   <Label fx:id="account_lbl" text="PayPal">
+      <HBox.margin>
+         <Insets left="25.0" top="20.0" />
+      </HBox.margin>
+   </Label>
+   <Label fx:id="date_lbl" text="17/05/24">
+      <HBox.margin>
+         <Insets left="25.0" top="20.0" />
+      </HBox.margin>
+   </Label>
+   <Label fx:id="amount_lbl" text="€500.0">
+      <HBox.margin>
+         <Insets left="25.0" top="20.0" />
+      </HBox.margin>
+   </Label>
+</HBox>
