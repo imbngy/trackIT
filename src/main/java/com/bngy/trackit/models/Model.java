@@ -64,7 +64,7 @@ public class Model {
         try{
             if (rs == null) {
                 this.loginSuccess = false;
-                viewFactory.getCurrentController().showError("Database Error", "An error occurred while trying to connect to the database. Please try again later.");
+                viewFactory.getCurrentController().showError("Database Error", "Error connecting to the database.");
                 return;
             }
             if(rs.isBeforeFirst()){
@@ -72,7 +72,7 @@ public class Model {
                 this.loginSuccess = true;
             }
         } catch (SQLException e) {
-            viewFactory.getCurrentController().showError("Database Error", "An error occurred while trying to connect to the database. Please try again later.");
+            viewFactory.getCurrentController().showError("Database Error", "Error connecting to the database.");
         }
     }
 
@@ -85,7 +85,7 @@ public class Model {
                 accounts.add(Account.fromResultSet(rs));
             }
         } catch (SQLException e) {
-            viewFactory.getCurrentController().showError("Database Error", "An error occurred while trying to connect to the database. Please try again later.");
+            viewFactory.getCurrentController().showError("Database Error", "Error connecting to the database.");
         }
     }
 

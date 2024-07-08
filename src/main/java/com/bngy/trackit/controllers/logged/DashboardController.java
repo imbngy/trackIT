@@ -321,7 +321,7 @@ public class DashboardController extends BaseController {
                     showError("Error", "Failed to load account details, please try again later.");
                 }
             } else {
-                showError("Error", "No accounts found");
+                showAddAcc();
             }
         });
 
@@ -333,7 +333,7 @@ public class DashboardController extends BaseController {
                     showError("Error", "Failed to load account details, please try again later.");
                 }
             } else {
-                showError("Error", "No accounts found");
+                showAddAcc();
             }
         });
 
@@ -407,10 +407,25 @@ public class DashboardController extends BaseController {
         });
     }
 
+    private void showAddAcc(){
+        FadeTransition ft = new FadeTransition();
+        ft.setNode(addAcc_pane);
+        ft.setFromValue(0.0);
+        ft.setToValue(1.0);
+        ft.play();
+        addAcc_pane.setVisible(true);
+    }
+
     private void updateAccDetBox() {
-        for (Account acc : Model.getInstance().getAccounts()) {
-            accDet_box.getItems().add(acc.getAcc_name());
+        ObservableList<String> accs = FXCollections.observableArrayList();
+        if (Model.getInstance().getAccounts().isEmpty()) {
+            return;
         }
+        for (Account account : Model.getInstance().getAccounts()) {
+            accs.add(account.getAcc_name());
+        }
+        accDet_box.setItems(accs);
+        accDet_box.setValue(accs.getFirst());
     }
 
     private void updateAccDetails(Account accountByName) throws SQLException {
@@ -484,6 +499,7 @@ public class DashboardController extends BaseController {
             showError("Error", "Failed to load accounts.");
         }
 
+        accounts.clear();
         accounts = Model.getInstance().getAccounts();
         if (accounts != null && !accounts.isEmpty()) {
             setAccounts(accounts);
@@ -496,6 +512,10 @@ public class DashboardController extends BaseController {
         Account firstAccount = accounts.getFirst();
         updateAccCard(firstAccount, card1_img, card1Blnc_lbl, card1Name_lbl);
 
+
+        if (accounts == null || accounts.isEmpty()) {
+            return;
+        }
 
         if (accounts.size() > 1) {
             Account secondAccount = accounts.get(1);
@@ -522,6 +542,9 @@ public class DashboardController extends BaseController {
 
     private void setAccBox (List<Account> accounts) {
         ObservableList<String> accNames = FXCollections.observableArrayList();
+        if (accounts == null || accounts.isEmpty()) {
+            return;
+        }
         for (Account account : accounts) {
             accNames.add(account.getAcc_name());
         }
@@ -610,7 +633,6 @@ public class DashboardController extends BaseController {
 
         onBackClickedAcc();
         updateUI();
-        accounts = Model.getInstance().getAccounts();
         //refresh the account cards
         updateAccDetBox();
         setAccounts(Model.getInstance().getAccounts());
