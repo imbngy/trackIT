@@ -36,7 +36,7 @@
       <PasswordField fx:id="psw_fld" prefHeight="35.0" prefWidth="500.0" promptText="Password" />
       <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="500.0" text="Login" />
       <VBox prefHeight="74.0" prefWidth="500.0" styleClass="login-form-bottom" stylesheets="@../css/login.css">
-         <Button fx:id="createAcc_btn" mnemonicParsing="false" prefHeight="23.0" prefWidth="120.0" text="Create an account!" wrapText="true" />
+         <Button fx:id="createAcc_btn" mnemonicParsing="false" prefHeight="23.0" prefWidth="162.0" text="Create an account!" />
       </VBox>
       <Label fx:id="error_lbl" prefHeight="15.0" prefWidth="499.0" styleClass="error-label" />
    </VBox>
