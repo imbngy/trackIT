@@ -353,18 +353,20 @@ public class DashboardController extends BaseController {
                 ft.setFromValue(0.0);
                 ft.setToValue(1.0);
                 ft.play();
-                accDetails_pane.setVisible(true);
+                ft.setOnFinished(e1 -> {
+                    accDetails_pane.setVisible(true);
+                });
                 if (accDet_box.getValue() != null) {
                     try {
                         updateAccDetails(Model.getInstance().getAccountByName(accDet_box.getValue()));
                     } catch (SQLException ex) {
-                        showError("Error", "Failed to load account details, please try again later.");
+                        showError("Error", "Failed to load account details.");
                     }
                 } else {
                     try {
                         updateAccDetails(null);
                     } catch (SQLException ex) {
-                        showError("Error", "Failed to load account details");
+                        showError("Error", "Failed to load account details.");
                     }
                 }
             }
