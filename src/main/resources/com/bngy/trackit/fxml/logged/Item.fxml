@@ -12,12 +12,12 @@
          <ImageView fx:id="trans_imgView" fitHeight="25.0" fitWidth="25.0" layoutX="44.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="19.0" />
       </children>
    </AnchorPane>
-   <Label fx:id="externalSource_lbl" text="Spotify">
+   <Label fx:id="externalSource_lbl" text="Spotify" wrapText="true">
       <HBox.margin>
          <Insets left="25.0" top="20.0" />
       </HBox.margin>
    </Label>
-   <Label fx:id="account_lbl" text="PayPal">
+   <Label fx:id="account_lbl" text="PayPal" wrapText="true">
       <HBox.margin>
          <Insets left="25.0" top="20.0" />
       </HBox.margin>
@@ -27,7 +27,7 @@
          <Insets left="25.0" top="20.0" />
       </HBox.margin>
    </Label>
-   <Label fx:id="amount_lbl" text="€500.0">
+   <Label fx:id="amount_lbl" text="€500.0" wrapText="true">
       <HBox.margin>
          <Insets left="25.0" top="20.0" />
       </HBox.margin>

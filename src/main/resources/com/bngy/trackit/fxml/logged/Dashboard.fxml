@@ -42,7 +42,7 @@
       <AnchorPane fx:id="background_pane" prefHeight="200.0" prefWidth="200.0" styleClass="main-background" BorderPane.alignment="CENTER">
          <VBox prefHeight="360.0" prefWidth="1168.0" styleClass="mid-panel" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <HBox prefHeight="54.0" prefWidth="1146.0">
-               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="117.0" styleClass="mid-panel-title" text="Dashboard">
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="117.0" styleClass="mid-panel-title" text="Dashboard" wrapText="true">
                   <padding>
                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                   </padding>
@@ -55,13 +55,13 @@
                      <Insets top="10.0" />
                   </HBox.margin>
                </Separator>
-               <Label fx:id="greet_lbl" prefHeight="49.0" prefWidth="867.0" styleClass="mid-panel-greeting" text="Welcome back, user!">
+               <Label fx:id="greet_lbl" prefHeight="49.0" prefWidth="867.0" styleClass="mid-panel-greeting" text="Welcome back, user!" wrapText="true">
                   <padding>
                      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                   </padding>
                </Label>
                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="128.0">
-                  <Label fx:id="timedate_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="7.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="114.0" styleClass="mid-panel-time" text="10/06/2024">
+                  <Label fx:id="timedate_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="7.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="114.0" styleClass="mid-panel-time" text="10/06/2024" wrapText="true">
                      <padding>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
@@ -73,8 +73,8 @@
                   <Insets bottom="30.0" />
                </VBox.margin>
                <VBox prefHeight="274.0" prefWidth="167.0" styleClass="mid-panel-add">
-                  <Label text="My Accounts:" />
-                  <Button fx:id="addAccount_btn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" styleClass="mid-panel-add-button" text=" Account        ">
+                  <Label text="My Accounts:" wrapText="true" />
+                  <Button fx:id="addAccount_btn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" styleClass="mid-panel-add-button" text=" Account        " wrapText="true">
                      <VBox.margin>
                         <Insets left="20.0" top="80.0" />
                      </VBox.margin>
@@ -82,7 +82,7 @@
                         <FontAwesomeIconView glyphName="PLUS" size="20" />
                      </graphic>
                   </Button>
-                  <Button fx:id="addTrans_btn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" styleClass="mid-panel-add-button" text="Transaction">
+                  <Button fx:id="addTrans_btn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="115.0" styleClass="mid-panel-add-button" text="Transaction" wrapText="true">
                      <graphic>
                         <FontAwesomeIconView glyphName="PLUS" size="20" />
                      </graphic>
@@ -150,7 +150,7 @@
                            <Insets left="30.0" top="5.0" />
                         </HBox.margin>
                      </FontAwesomeIconView>
-                     <Label fx:id="expensesSummary_lbl" text="€0.00">
+                     <Label fx:id="expensesSummary_lbl" text="€0.00" wrapText="true">
                         <HBox.margin>
                            <Insets left="15.0" top="10.0" />
                         </HBox.margin>
@@ -167,7 +167,7 @@
                            <Insets left="30.0" top="5.0" />
                         </HBox.margin>
                      </FontAwesomeIconView>
-                     <Label fx:id="incomeSummary_lbl" styleClass="mid-panel-summary-expense" text="€0.00">
+                     <Label fx:id="incomeSummary_lbl" styleClass="mid-panel-summary-expense" text="€0.00" wrapText="true">
                         <HBox.margin>
                            <Insets left="15.0" top="10.0" />
                         </HBox.margin>
@@ -177,7 +177,7 @@
             </HBox>
          </VBox>
          <VBox layoutX="40.0" layoutY="368.0" prefHeight="352.0" prefWidth="1148.0" styleClass="bot-panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="368.0">
-            <Label styleClass="bot-panel-title" text="Transactions">
+            <Label styleClass="bot-panel-title" text="Transactions" wrapText="true">
                <VBox.margin>
                   <Insets left="15.0" top="15.0" />
                </VBox.margin>
