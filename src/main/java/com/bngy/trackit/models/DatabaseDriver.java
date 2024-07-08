@@ -402,7 +402,8 @@ public class DatabaseDriver {
         while (accounts.next()) {
             try {
                 statement = conn.createStatement();
-                rs = statement.executeQuery("SELECT * FROM transactions WHERE account = " + accounts.getInt("id"));
+                //sort by descending id
+                rs = statement.executeQuery("SELECT * FROM transactions WHERE account = " + accounts.getInt("id") + " ORDER BY id DESC");
                 while (rs.next()) {
                     String external = rs.getString("external");
                     int acc_id = rs.getInt("account");

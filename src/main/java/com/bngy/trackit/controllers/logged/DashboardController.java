@@ -93,6 +93,7 @@ public class DashboardController extends BaseController {
 
     double xOffset;
     double yOffset;
+    List<Account> accounts = Model.getInstance().getAccounts();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -102,7 +103,7 @@ public class DashboardController extends BaseController {
         try {
             initTransactions();
         } catch (Exception e) {
-            showError("Error", "Failed to load transactions, please try again later.");
+            showError("Error", "Failed to load transactions.");
         }
         trans_listView.setItems(Model.getInstance().getTransactions());
         trans_listView.setCellFactory(e -> new TransactionCellFactory());
@@ -170,10 +171,9 @@ public class DashboardController extends BaseController {
         try {
             Model.getInstance().checkAccounts(username);
         } catch (Exception e) {
-            showError("Error", e.getMessage());
+            showError("Error", "Failed to load accounts.");
         }
 
-        List<Account> accounts = Model.getInstance().getAccounts();
         if (accounts != null && !accounts.isEmpty()) {
             setAccounts(accounts);
             setAccBox(accounts);
@@ -253,7 +253,7 @@ public class DashboardController extends BaseController {
                 });
         });
 
-        accType_box.getItems().addAll("Mastercard", "Visa", "Paypal");
+        accType_box.getItems().addAll("Mastercard", "Visa", "PayPal");
         accType_box.setValue("Mastercard");
 
         backTop_btn1.setOnMouseClicked(e -> {
@@ -272,7 +272,7 @@ public class DashboardController extends BaseController {
             try {
                 handleTransaction();
             } catch (Exception ex) {
-                showError("Error", ex.getMessage());
+                showError("Error", "Failed to create transaction.");
             }
         });
 
@@ -311,6 +311,9 @@ public class DashboardController extends BaseController {
         });
 
         card1_img.setOnMouseClicked(e -> {
+            //refresh account details before checking
+            accounts = Model.getInstance().getAccounts();
+
             if (accounts != null && !accounts.isEmpty()) {
                 try {
                     showAccDetails(accounts.getFirst());
@@ -334,9 +337,7 @@ public class DashboardController extends BaseController {
             }
         });
 
-        for (Account acc : Model.getInstance().getAccounts()) {
-            accDet_box.getItems().add(acc.getAcc_name());
-        }
+        updateAccDetBox();
 
         accDets_btn.setOnMouseClicked(e -> {
             if (accDetails_pane.isVisible()) {
@@ -363,7 +364,7 @@ public class DashboardController extends BaseController {
                     try {
                         updateAccDetails(null);
                     } catch (SQLException ex) {
-                        throw new RuntimeException(ex);
+                        showError("Error", "Failed to load account details");
                     }
                 }
             }
@@ -373,7 +374,7 @@ public class DashboardController extends BaseController {
             try {
                 updateAccDetails(Model.getInstance().getAccountByName(accDet_box.getValue()));
             } catch (SQLException ex) {
-                showError("Error", "Failed to load account details, please try again later.");
+                showError("Error", "Failed to load account details.");
             }
         });
 
@@ -392,19 +393,24 @@ public class DashboardController extends BaseController {
                 //Export transactions for selectedAcc to JSON
                 Model.getInstance().getDatabaseDriver().exportSingleAccJSON(Model.getInstance().getAccountId(accDet_box.getValue()));
                 showError("Success", "Exported to JSON");
-            } catch (SQLException e1) {
-                showError("Error", "Export to JSON failed");
             } catch (Exception ex) {
-                showError("Error", ex.getMessage());
+                showError("Error", "Export to JSON failed");
             }
         });
 
         updateSummary();
+        updateUI();
 
         Platform.runLater(() -> {
             setupLightMode();
             Model.getInstance().getViewFactory().setLightMode();
         });
+    }
+
+    private void updateAccDetBox() {
+        for (Account acc : Model.getInstance().getAccounts()) {
+            accDet_box.getItems().add(acc.getAcc_name());
+        }
     }
 
     private void updateAccDetails(Account accountByName) throws SQLException {
@@ -475,10 +481,10 @@ public class DashboardController extends BaseController {
         try {
             Model.getInstance().checkAccounts(username);
         } catch (Exception e) {
-            showError("Error", e.getMessage());
+            showError("Error", "Failed to load accounts.");
         }
 
-        List<Account> accounts = Model.getInstance().getAccounts();
+        accounts = Model.getInstance().getAccounts();
         if (accounts != null && !accounts.isEmpty()) {
             setAccounts(accounts);
             setAccBox(accounts);
@@ -530,11 +536,25 @@ public class DashboardController extends BaseController {
         String type = transType_box.getValue();
         Integer acc_id = Model.getInstance().getAccountId(accName);
 
-        if (accName.isEmpty() || amount == 0) {
-            showError("Error", "Please fill in all fields");
+        //check if all fields are filled
+        if (accName.isEmpty() || external.isEmpty() || amount_fld.getText().isEmpty() || external_fld.getText().isEmpty()) {
+            showError("Error", "Please fill all fields");
             return;
         }
 
+        //check if there are any fields that are only spaces
+        if (accName.trim().isEmpty() || external.trim().isEmpty()) {
+            showError("Error", "Please fill all fields");
+            return;
+        }
+
+        //check if amount is valid
+        if (amount <= 0) {
+            showError("Error", "Amount must be greater than 0");
+            return;
+        }
+
+        //check if account has enough funds
         if (amount > DatabaseDriver.getBalanceByName(accName, Model.getInstance().getUser().getUsername()) && type.equals("OUT")) {
             showError("Error", "Insufficient funds on " + accName + ", total balance is €" + DatabaseDriver.getBalanceByName(accName, Model.getInstance().getUser().getUsername()));
             return;
@@ -545,7 +565,7 @@ public class DashboardController extends BaseController {
             Model.getInstance().getDatabaseDriver().updateBalance(acc_id, amount, type);
             updateTransactions();
         } catch (Exception e) {
-            showError("Error", e.getMessage());
+            showError("Error", "Failed to create transaction.");
         }
 
         onBackClickedTrans();
@@ -560,14 +580,40 @@ public class DashboardController extends BaseController {
         if (accName.isEmpty()) {
             return;
         }
+
+        if (accCash < 0) {
+            showError("Error", "Cash must be greater than 0");
+            return;
+        }
+
+        if (accName.trim().isEmpty()) {
+            showError("Error", "Please fill all fields");
+            return;
+        }
+
+        //check if account name already exists
+        for (Account account : Model.getInstance().getAccounts()) {
+            if (account.getAcc_name().equals(accName)) {
+                showError("Error", "Account name already exists");
+                return;
+            }
+            if (account.getAcc_name().equals(accName.trim())){
+                showError("Error", "Account name already exists");
+                return;
+            }
+        }
         try {
             Model.getInstance().getDatabaseDriver().createAccount(accName, accType, Model.getInstance().getUser().getUsername().toLowerCase(),accCash);
         } catch (Exception e) {
-            showError("Error", e.getMessage());
+            showError("Error", "Failed to create account.");
         }
 
         onBackClickedAcc();
         updateUI();
+        accounts = Model.getInstance().getAccounts();
+        //refresh the account cards
+        updateAccDetBox();
+        setAccounts(Model.getInstance().getAccounts());
     }
 
     private void updateSummary() {

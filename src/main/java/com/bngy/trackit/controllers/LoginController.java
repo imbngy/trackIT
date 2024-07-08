@@ -85,9 +85,9 @@ public class LoginController extends BaseController{
     private void onLogin() throws SQLException {
         //Check login
         try {
-            Model.getInstance().checkLogin(username_fld.getText().toLowerCase(), psw_fld.getText());
+            Model.getInstance().checkLogin(username_fld.getText().trim().toLowerCase(), psw_fld.getText());
         } catch (Exception e) {
-            showError("Error", e.getMessage());
+            showError("Error", "Error connecting to the database.");
         }
         if(Model.getInstance().getLoginSuccess()){
             Stage stage = (Stage) login_btn.getScene().getWindow();

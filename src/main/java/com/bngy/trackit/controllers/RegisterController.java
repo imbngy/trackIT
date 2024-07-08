@@ -83,11 +83,29 @@ public class RegisterController extends BaseController{
             registerError_lbl.setText("Please fill all fields");
             return;
         }
+
+        if (username_fld.getText().trim().isEmpty() || psw_fld.getText().trim().isEmpty() || checkPsw_fld.getText().trim().isEmpty()) {
+            registerError_lbl.setText("Please fill all fields");
+            return;
+        }
+
         //Check if username already exists
         if(Model.getInstance().getDatabaseDriver().checkUsername(username_fld.getText().toLowerCase())){
             registerError_lbl.setText("Username is already taken");
             return;
         }
+
+        if(Model.getInstance().getDatabaseDriver().checkUsername(username_fld.getText().trim().toLowerCase())){
+            registerError_lbl.setText("Username is already taken");
+            return;
+        }
+
+        //Check if username contains special characters or spaces
+        if(!username_fld.getText().matches("[a-zA-Z0-9]+")){
+            registerError_lbl.setText("Username can only contain letters and numbers");
+            return;
+        }
+
         //Check if email is valid
         InternetAddress emailAddr = new InternetAddress(email_fld.getText());
         try {
