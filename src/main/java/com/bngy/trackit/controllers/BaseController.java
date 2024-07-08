@@ -14,12 +14,12 @@ public abstract class BaseController implements Initializable {
     protected Label errorMsgBodyLbl;
 
     public static String[] fonts = {
-            "/com/bngy/trackit/fonts/Roboto-Regular.ttf",
-            "/com/bngy/trackit/fonts/Roboto-Bold.ttf",
-            "/com/bngy/trackit/fonts/Roboto-Medium.ttf",
-            "/com/bngy/trackit/fonts/Roboto-Light.ttf",
-            "/com/bngy/trackit/fonts/Roboto-Thin.ttf",
-            "/com/bngy/trackit/fonts/Roboto-Black.ttf"
+            "/com/bngy/trackit/fonts/Lato-Regular.ttf",
+            "/com/bngy/trackit/fonts/Lato-Bold.ttf",
+            "/com/bngy/trackit/fonts/Lato-Black.ttf",
+            "/com/bngy/trackit/fonts/Lato-Light.ttf",
+            "/com/bngy/trackit/fonts/Lato-Thin.ttf",
+            "/com/bngy/trackit/fonts/Lato-Italic.ttf"
     };
 
 
