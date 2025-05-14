@@ -34,7 +34,7 @@ The application focuses on **accessibility**, **usability**, and **clarity**, in
 
 ## Technologies Used
 
-- Java 17
+- Java 21
 - JavaFX
 - FXML for UI layout and component separation
 - CSS for theme styling
